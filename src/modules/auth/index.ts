@@ -8,9 +8,9 @@ export default (app: Elysia) =>
       const token = headers.authorization?.replace("Bearer ", "");
       const user = await auth.verify(token);
 
-      if (user !== false) return;
-
-      set.status = 401;
-      return "Unauthorized";
+      if (user === false) {
+        set.status = 401;
+        return "Unauthorized";
+      }
     },
   });
