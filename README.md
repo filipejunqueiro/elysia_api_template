@@ -1,15 +1,43 @@
-# Elysia with Bun runtime
+# Elysia API Template
 
 ## Getting Started
-To get started with this template, simply paste this command into your terminal:
+
+### Requirements
+
+- [**git**](https://git-scm.com)
+- [**bun**](https://bun.com)
+
+### Installation
+
+1. Clone the repository or use the template option.
+2. Go to the `root` folder within a terminal of your choice and type `bun i`.
+
+### Env File
+
+This are the default values, even if you don't specify them in the `.env` file, the api will execute.
+
 ```bash
-bun create elysia ./elysia-example
+API_PORT="3000"
+JWT_SECRET="secret"
+JWT_ALGORITHM="EdDSA"
 ```
 
-## Development
-To start the development server run:
+Want a different algorithm?
+Check the [**elysia docs**](https://elysiajs.com/plugins/jwt).
+
+## Scripts
+
+### Develop
+
 ```bash
 bun run dev
 ```
 
-Open http://localhost:3000/ with your browser to see the result.
+### Deploy
+
+If you want you can deploy for a specific target.
+For more info: [**bun docs**](https://bun.com/docs/bundler/executables#cross-compile-to-other-platforms).
+
+```bash
+bun run build
+```
